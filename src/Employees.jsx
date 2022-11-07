@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState} from 'react';
 
 const Employees = () => {
@@ -89,9 +90,9 @@ const Employees = () => {
   return (
     <main>
       {
-       employees.map((employees) => {
-         <p>{employees.fullName}</p>
-       })
+       employees.map((employee) => (
+         <p>{employee.fullName}</p>
+       ))
       }
     </main>
   )
