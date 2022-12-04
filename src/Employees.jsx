@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import femaleProfile from './images/femaleProfile.jpg';
-import maleProfile from './images/maleProfile';
+import maleProfile from './images/maleProfile.jpg';
 
 const Employees = () => {
 
@@ -90,12 +90,16 @@ const Employees = () => {
   }]);
   
   return (
-    <main>
+    <main className="container">
+      <div className="row">
+        <div className="col-8">
       {
        employees.map((employee) => (
          <p>{employee.fullName}</p>
        ))
       }
+        </div>
+      </div>
     </main>
   )
   
