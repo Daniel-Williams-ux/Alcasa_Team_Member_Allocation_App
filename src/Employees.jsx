@@ -93,6 +93,7 @@ const Employees = () => {
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
+          <div className="card-collection">
       {
        employees.map((employee) => (
          <div id={employee.id} className="card">
@@ -100,12 +101,11 @@ const Employees = () => {
            <div className="card-body">
              <h5 className="card-title">Full Name: {employee.fullName}</h5>
              <p className="card-text"><b>Designation: </b>{employee.designation}</p>
-             <p className="card-gender"><b>Gender: </b>{employee.gender}</p>
-              <p className="card-team"><b>Team: </b>{employee.teamName}</p>
            </div>
          </div>
        ))
       }
+            </div>
         </div>
       </div>  
     </main>
