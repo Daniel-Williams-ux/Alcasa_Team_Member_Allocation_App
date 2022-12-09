@@ -91,6 +91,16 @@ const Employees = () => {
   
   return (
     <main className="container">
+       <div className="row justify-content-center mt-3 mb-3">
+        <div className="col-6">
+          <select>
+            <option value="TeamA">TeamA</option>
+            <option value="TeamA">TeamB</option>
+            <option value="TeamA">TeamC</option>
+            <option value="TeamA">TeamD</option>
+          </select>
+        </div>
+       </div>
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
           <div className="card-collection">
