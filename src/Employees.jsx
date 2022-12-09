@@ -28,13 +28,13 @@ const Employees = () => {
   {
     id: 4,
     fullName: "Daniel Williams",
-    designation: "Project Manager/Software Engineer",
+    designation: "Project Manager",
     gender: "male",
     teamName: "TeamB"
   },
   {
     id: 5,
-    fullName: "Jhibola",
+    fullName: "Abdulsalam Jhibola",
     designation: "Supervisor",
     gender: "male",
     teamName: "TeamB"
@@ -48,7 +48,7 @@ const Employees = () => {
   },
   {
     id: 7,
-    fullName: "Sunday Cotonu",
+    fullName: "Sunday Loquo",
     designation: "Member",
     gender: "male",
     teamName: "TeamC"
@@ -97,7 +97,7 @@ const Employees = () => {
       {
        employees.map((employee) => (
          <div id={employee.id} className="card m-2" style={{cursor: "pointer"}}>
-           <img src={femaleProfile} className="card-img-top"/>
+  {(employee.gender === 'male') ? <img src={maleProfile} className="card-img-top"/> : <img src={femaleProfile} className="card-img-top"/>}
            <div className="card-body">
              <h5 className="card-title">Full Name: {employee.fullName}</h5>
              <p className="card-text"><b>Designation: </b>{employee.designation}</p>
