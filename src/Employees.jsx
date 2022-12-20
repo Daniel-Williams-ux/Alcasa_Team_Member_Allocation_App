@@ -1,9 +1,11 @@
-import React from 'react'
+ import React from 'react'
 import { useState } from 'react';
 import femaleProfile from './images/femaleProfile.jpg';
 import maleProfile from './images/maleProfile.jpg';
 
 const Employees = () => {
+
+  const [selectedTeam, setSelectedTeam] = useState('TeamB');
 
   const [employees, setEmployees] = useState([{id: 1,
     fullName: "Melvin Onyebueka",
@@ -88,16 +90,20 @@ const Employees = () => {
     gender: "male",
     teamName: "TeamD"
   }]);
-  
+
+  function handleTeamSelectionChange(event) {
+    console.log(event.target.value);
+    setSelectedTeam(event.target.value);
+  }
   return (
     <main className="container">
        <div className="row justify-content-center mt-3 mb-3">
         <div className="col-6">
-          <select className="form-select form-select-lg">
+          <select className="form-select form-select-lg" value={selectedTeam} onChange={handleTeamSelectionChange}>
             <option value="TeamA">TeamA</option>
-            <option value="TeamA">TeamB</option>
-            <option value="TeamA">TeamC</option>
-            <option value="TeamA">TeamD</option>
+            <option value="TeamB">TeamB</option>
+            <option value="TeamC">TeamC</option>
+            <option value="TeamD">TeamD</option>
           </select>
         </div>
        </div>
@@ -123,3 +129,14 @@ const Employees = () => {
   
 }
 export default Employees;
+
+/*const [selectedTeam, setTeam] = useState('TeamB');
+
+function handleTeamSelectionChange(event) {
+    console.log(event.target.value);
+    setTeam(event.target.value);
+  }
+
+  value={selectedTeam} onChange={handleTeamSelectionChange}
+
+*/
