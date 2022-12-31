@@ -39,14 +39,3 @@ const Employees = ({employees,selectedTeam,handleEmployeeCardClick,handleTeamSel
   
 }
 export default Employees;
-
-/*const [selectedTeam, setTeam] = useState('TeamB');
-
-function handleTeamSelectionChange(event) {
-    console.log(event.target.value);
-    setTeam(event.target.value);
-  }
-
-  value={selectedTeam} onChange={handleTeamSelectionChange}
-
-*/

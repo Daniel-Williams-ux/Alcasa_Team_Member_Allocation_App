@@ -7,7 +7,7 @@ import { useState } from 'react';
 function App() {
   
   
-  const [selectedTeam, setSelectedTeam] = useState('TeamB');
+  const [selectedTeam, setSelectedTeam] = useState('TeamA');
 
   const [employees, setEmployees] = useState([{id: 1,
     fullName: "Melvin Onyebueka",
@@ -107,7 +107,8 @@ function App() {
   
   return (
     <div>
-      <Header />
+      <Header selectedTeam={selectedTeam}
+              teamMemberCount={employees.filter((employee) => employee.teamName === selectedTeam).length}/>
       <Employees employees={employees}
         selectedTeam={selectedTeam}
         handleEmployeeCardClick={handleEmployeeCardClick}
