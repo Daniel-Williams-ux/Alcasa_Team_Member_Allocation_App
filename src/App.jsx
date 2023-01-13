@@ -11,7 +11,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 function App() {
   
   
-  const [selectedTeam, setSelectedTeam] = useState(JSON.parse(localStorage.getItem('selectedTeam')) || 'TeamA');
+  const [selectedTeam, setTeam] = useState(JSON.parse(localStorage.getItem('selectedTeam')) || 'TeamA');
 
   const [employees, setEmployees] = useState(JSON.parse(localStorage.getItem('employeeList')) || [{id: 1,
     fullName: "Melvin Onyebueka",
@@ -122,15 +122,19 @@ function App() {
       <Router>
         <Nav />
           <Header selectedTeam={selectedTeam}
-                  teamMemberCount={employees.filter((employee) => employee.teamName === selectedTeam).length}/>
+                  teamMemberCount={employees.filter((employee) => 
+                    employee.teamName === selectedTeam).length}/>
           <Routes>
             <Route path="/"
               element={<Employees employees={employees}
-                selectedTeam={selectedTeam}
+                selectedTeam = {selectedTeam}
                 handleEmployeeCardClick={handleEmployeeCardClick}
-                 handleTeamSelectionChange={ handleTeamSelectionChange}/>}>
+                 handleTeamSelectionChange = { handleTeamSelectionChange}/>}>
               </Route>
-            <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers/>}>
+            <Route path="/GroupedTeamMembers" 
+              element ={<GroupedTeamMembers employees = {employees} 
+              selectedTeam ={selectedTeam}
+              setTeam={setTeam} />}>
            </Route>
             <Route path ="*" element={<NotFound/>}>
             </Route>
