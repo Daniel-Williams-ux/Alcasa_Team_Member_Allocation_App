@@ -11,7 +11,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 function App() {
   
   
-  const [selectedTeam, setTeam] = useState(JSON.parse(localStorage.getItem('selectedTeam')) || 'TeamA');
+  const [selectedTeam, setSelectedTeam] = useState(JSON.parse(localStorage.getItem('selectedTeam')) || 'TeamA');
 
   const [employees, setEmployees] = useState(JSON.parse(localStorage.getItem('employeeList')) || [{id: 1,
     fullName: "Melvin Onyebueka",
@@ -134,7 +134,7 @@ function App() {
             <Route path="/GroupedTeamMembers" 
               element ={<GroupedTeamMembers employees = {employees} 
               selectedTeam ={selectedTeam}
-              setTeam={setTeam} />}>
+              setSelectedTeam={setSelectedTeam} />}>
            </Route>
             <Route path ="*" element={<NotFound/>}>
             </Route>
